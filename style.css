@@ -22,6 +22,7 @@
 
 body {
   margin: 0;
+  overflow-x: hidden;
 }
 
 nav {
@@ -74,7 +75,7 @@ a {
 button {
   background-color: #5cc2a0;
   color: #ffffff;
-  font-family: inherit;
+  font-family: "Source Semibold";
   font-size: inherit;
   border: none;
   height: 38px;
@@ -85,8 +86,8 @@ button {
 
 header {
   max-width: calc(100% - 264px);
-	margin: auto;
-	display: flex;
+  margin: auto;
+  display: flex;
 }
 
 .header__left {
@@ -121,7 +122,7 @@ h1 span {
   margin: 0 14px;
 }
 
-.header__span span {
+.span--gray {
   color: #a6b0b1;
   font-family: "Source Bold";
   font-size: 14px;
@@ -170,8 +171,7 @@ h1 span {
   font-family: "Source Bold";
 }
 
-.header__project p,
-.header__education p {
+p {
   font-family: "Source Regular";
   font-size: 16px;
   line-height: 24px;
@@ -179,12 +179,12 @@ h1 span {
 }
 
 .header__right .image__wrapper {
-	position: absolute;
+  position: absolute;
 }
 
 .orchestra {
-	top: 30%;
-	animation: floatAnimation 6s ease-in-out infinite;
+  top: 30%;
+  animation: floatAnimation 6s ease-in-out infinite;
 }
 
 @keyframes floatAnimation {
@@ -199,8 +199,8 @@ h1 span {
 }
 
 .shapes img {
-	width: 90%;
-	animation: rotateShapes 6s ease-in-out infinite;
+  width: 90%;
+  animation: rotateShapes 6s ease-in-out infinite;
 }
 
 @keyframes rotateShapes {
@@ -212,4 +212,122 @@ h1 span {
   50% {
     transform: rotate(8deg);
   }
+}
+
+main {
+	margin: 20% 0;
+}
+
+.events {
+  display: flex;
+  margin: 190px 0 120px;
+  perspective: 58px;
+  perspective-origin: bottom;
+}
+
+.events__left {
+  margin: 150px 0 -40px;
+	width: 50%;
+	z-index: 1;
+	background-color: #ffffff;
+	padding: 0px 60px 30px 228px;
+}
+
+h2 {
+  font-size: 42px;
+  line-height: 50px;
+  font-family: "Fuse Extrabold";
+}
+
+h2 span {
+  color: #5b6cc2;
+}
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+}
+
+.stats h2 {
+  margin-bottom: 0;
+}
+
+.stats p {
+  margin: auto;
+}
+
+.events button {
+  background-color: #5b6cc2;
+  width: 142px;
+  height: 38px;
+  margin: 62px 0;
+}
+
+.events .image__wrapper {
+  padding-left: 10%;
+}
+
+#lecture__img {
+  object-position: top;
+}
+
+.events__slider {
+  position: absolute;
+  display: flex;
+  transform: rotateY(-2deg) translate(-144px, 0);
+	bottom: -52px;
+	width: 200%;
+}
+
+.slider--first,
+.slider--second,
+.slider--third {
+  display: flex;
+}
+
+.events__slider .image__wrapper {
+  padding: 0;
+  margin: 16px;
+}
+
+@keyframes sliderFirst {
+  0% {
+    transform: translateX(165%);
+  }
+
+  100% {
+    transform: translateX(-35%);
+  }
+}
+
+.slider--first {
+  animation: sliderFirst 24s linear infinite running;
+}
+
+@keyframes sliderSecond {
+  0% {
+    transform: translateX(-35%);
+  }
+
+  100% {
+    transform: translateX(-235%);
+  }
+}
+
+.slider--second {
+  animation: sliderSecond 24s linear infinite  running;
+}
+
+@keyframes sliderThird {
+  0% {
+    transform: translateX(-35%);
+  }
+
+  100% {
+    transform: translateX(-235%);
+  }
+}
+
+.slider--third {
+  animation: sliderThird 24s 12s linear infinite  running;
 }
